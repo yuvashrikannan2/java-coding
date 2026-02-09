@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class SecurityValidator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter security code: ");
+        int num = sc.nextInt(), original = num, reversed = 0;
+        while (num != 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+        if (reversed == original) {
+            System.out.println("Valid palindrome code.");
+        } else {
+            System.out.println("Invalid code.");
+        }
+        sc.close();
+    }
+}
